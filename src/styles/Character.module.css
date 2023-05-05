@@ -1,0 +1,27 @@
+.charContainer {
+    background-color: #ffffff0b;
+    color: white;
+}
+
+.charContainer p {
+    font-weight: bold;
+    color: #e0e0e0;
+
+    margin-bottom: 5px;
+}
+
+.EpList {
+    overflow-y: scroll;
+
+    height: 350px;
+}
+
+.EpList::-webkit-scrollbar {
+    background-color: #0000002a;
+
+    width: 5px;
+}
+
+.EpList::-webkit-scrollbar-thumb {
+    background-color: #8FC448;
+}

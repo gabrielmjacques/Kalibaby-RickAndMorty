@@ -1,0 +1,12 @@
+.pageControl div {
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+
+    gap: 5%;
+}
+
+.pageControl button {
+    width: 100%;
+}

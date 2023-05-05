@@ -1,0 +1,74 @@
+.charCard {
+    background-color: #303030;
+    color: white;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+
+    max-width: 350px;
+    margin: 10px;
+    gap: 10px;
+    padding: 0;
+}
+
+.charCard:hover {
+    background-color: #242424;
+}
+
+.imgContainer {
+    overflow: hidden;
+
+    width: 40%;
+    height: 100%;
+}
+
+.imgContainer img {
+    object-fit: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+.charCard:hover img {
+    transform: scale(1.05);
+}
+
+.contentContainer {
+    width: 60%;
+    padding: 5px;
+}
+
+.contentContainer h4 {
+    font-size: 1.1rem;
+}
+
+.contentContainer p {
+    font-weight: bold;
+    color: #d0d0d0;
+
+    font-size: 0.9rem;
+}
+
+.alive::before {
+    content: '● ';
+    color: greenyellow;
+}
+
+.dead::before {
+    content: '● ';
+    color: red;
+}
+
+
+@media (max-width: 732px) {
+    .charCard {
+        flex-direction: column;
+
+        max-width: 40%;
+    }
+
+    .imgContainer {
+        width: 100%;
+        height: 50%;
+    }
+}

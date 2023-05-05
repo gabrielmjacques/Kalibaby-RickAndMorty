@@ -14,7 +14,7 @@ export default function Home()
         </div>
 
         <div className="row mt-5">
-          <a className='btn btn-dark' href="/chars">Ver Personagens</a>
+          <a className='btn btn-dark' href="/listpage/1">Ver Personagens</a>
         </div>
 
       </div>
