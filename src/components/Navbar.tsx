@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import Link from 'next/link'
 
 export default function Navbar()
 {
@@ -7,9 +8,9 @@ export default function Navbar()
         <div>
             <nav className="navbar p-0" style={ { backgroundColor: "#222831" } }>
                 <div className="container d-flex justify-content-center">
-                    <a className="navbar-brand p-0" href="/listpage/1">
+                    <Link href={ "/listpage/1" } className="navbar-brand p-0">
                         <img src={ logo.src } alt="Bootstrap" width={ "150px" } />
-                    </a>
+                    </Link>
                 </div>
             </nav>
         </div>
