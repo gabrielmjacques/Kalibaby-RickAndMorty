@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 import styles from "../styles/CharCard.module.css"
 
@@ -20,7 +21,7 @@ export default function CharCard(props: Char)
             onClick={ () => window.location.replace(`../character/${props.id}`) }>
 
             <div className={ styles.imgContainer }>
-                <img src={ props.image } alt="" />
+                <Image src={ props.image } alt={ `${props.name} image` } />
             </div>
 
             <div className={ styles.contentContainer }>
