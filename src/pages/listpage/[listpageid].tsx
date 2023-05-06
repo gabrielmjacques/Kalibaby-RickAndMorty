@@ -77,7 +77,6 @@ export default function ListPageId(data: CharsProps)
 
     return (
         <div className='col bg-dark' style={ { minHeight: "100vh" } }>
-            <Navbar />
 
             <div className="row pt-5 justify-content-center">
                 { RenderChars() }

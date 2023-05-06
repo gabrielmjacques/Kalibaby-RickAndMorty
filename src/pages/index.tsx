@@ -12,7 +12,7 @@ export default function Home()
       <div className="col-md-5 col-sm-10 mx-auto pt-5">
 
         <div className="row">
-          <Image className={ `p-5 ${styles.logo}` } src={ logo.src } alt="Rick and Morty logo" width={ 500 } />
+          <Image className={ `p-5 ${styles.logo}` } src={ logo.src } alt="Rick and Morty logo" width={ 500 } height={ 250 } />
         </div>
 
         <div className="row mt-5">

@@ -1,6 +1,5 @@
 import React from "react"
 import { GetServerSideProps } from "next"
-import Image from "next/image"
 import Navbar from "@/components/Navbar"
 import EpisodeCard from "@/components/EpisodeCard"
 
@@ -53,7 +52,7 @@ export default function CharacterId({ character, episodes }: Props)
 
                     <div className="row">
                         <div className="col-md-3 col-sm-12 mb-4 d-flex">
-                            <Image className="rounded-3" src={ character.image } alt={ `Imagem de ${character.name}` } width={ 200 } style={ { width: "100%", maxWidth: "200px", margin: "auto" } } />
+                            <img className="rounded-3" src={ character.image } alt={ `Imagem de ${character.name}` } style={ { width: "100%", maxWidth: "200px", margin: "auto" } } />
                         </div>
 
                         <div className="col-md-9 col-sm-12">
