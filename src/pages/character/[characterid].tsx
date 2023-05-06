@@ -80,7 +80,7 @@ export default function CharacterId({ character, episodes }: Props)
                     </div>
 
                     <div className="row m-3">
-                        <button className="btn btn-success">Voltar</button>
+                        <button className="btn btn-success" onClick={ () => window.location.replace("../listpage/1") }>Voltar para o Início</button>
                     </div>
 
                 </div>
