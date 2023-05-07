@@ -54,27 +54,49 @@ export default function Search(data: CharsProps)
 
     useEffect(() =>
     {
-        pageId == 1 ? setDisPrevBtn(true) : setDisPrevBtn(false)
-        pageId == data.info.pages ? setDisNextBtn(true) : setDisNextBtn(false)
+        try
+        {
+            pageId == 1 ? setDisPrevBtn(true) : setDisPrevBtn(false)
+            pageId == data.info.pages ? setDisNextBtn(true) : setDisNextBtn(false)
+        } catch {
+            setDisPrevBtn(true)
+            setDisNextBtn(true)
+        }
     }, [pageId])
 
 
     const RenderChars = () =>
     {
-        return data.results.map(
-            (char, index) =>
-            {
-                return <CharCard
-                    key={ index }
-                    id={ char.id }
-                    name={ char.name }
-                    image={ char.image }
-                    status={ char.status }
-                    species={ char.species }
-                    location={ char.location.name }
-                    origin={ char.origin.name } />
-            }
-        )
+        try
+        {
+            return data.results.map(
+                (char, index) =>
+                {
+                    return <CharCard
+                        key={ index }
+                        id={ char.id }
+                        name={ char.name }
+                        image={ char.image }
+                        status={ char.status }
+                        species={ char.species }
+                        location={ char.location.name }
+                        origin={ char.origin.name } />
+                }
+            )
+        } catch {
+            return <div className={ `${styles.errContainer}` }>
+                <div className="row text-center">
+                    <h3 className='text-white'>Personagem não encontrado</h3>
+                    <p className='text-white-50'>Parece que a sua busca não retornou nenhum resultado... Tente pesquisar novamente</p>
+                </div>
+
+                <div className="row">
+                    <button
+                        className='btn btn-success'
+                        onClick={ () => window.location.replace("/listpage/1") }>Voltar para o início</button>
+                </div>
+            </div>
+        }
     }
 
     const Search = () =>
@@ -99,11 +121,15 @@ export default function Search(data: CharsProps)
                                 className={ `form-control bg-dark text-white me-1 border-0 ${styles.searchInput}` }
                                 placeholder="Pesquisar Personagem"
                                 aria-label="Recipient's username" aria-describedby="button-addon2"
-                                onChange={ (e) => setSearch(e.target.value) } />
+                                onChange={ (e) => setSearch(e.target.value) }
+                                onKeyDown={ (e) =>
+                                {
+                                    if (e.key == "Enter") { Search() }
+                                } } />
                             <button
                                 className="btn btn-outline-success"
                                 type="button" id="button-addon2"
-                                onClick={ () => { Search() } }>Button</button>
+                                onClick={ () => Search() }>Button</button>
                         </div>
                     </div>
                 </div>
@@ -134,10 +160,19 @@ export const getServerSideProps: GetServerSideProps<CharsProps> = async (context
     const search = params?.search
     const page = params?.page
 
-    const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${String(page).replaceAll("%20", "+")}&name=${search}`)
-    const data = await res.json()
+    try
+    {
+        const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${String(page).replaceAll("%20", "+")}&name=${search}`)
+        const data = await res.json()
 
-    return {
-        props: data
+        return {
+            props: data
+        }
+    } catch {
+        const data = "err"
+
+        return {
+            props: data
+        }
     }
 }

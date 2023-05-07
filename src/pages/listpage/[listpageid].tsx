@@ -98,7 +98,11 @@ export default function ListPageId(data: CharsProps)
                                 className={ `form-control bg-dark text-white me-1 border-0 ${styles.searchInput}` }
                                 placeholder="Pesquisar Personagem"
                                 aria-label="Recipient's username" aria-describedby="button-addon2"
-                                onChange={ (e) => setSearch(e.target.value) } />
+                                onChange={ (e) => setSearch(e.target.value) }
+                                onKeyDown={ (e) =>
+                                {
+                                    if (e.key == "Enter") { Search() }
+                                } } />
                             <button
                                 className="btn btn-outline-success"
                                 type="button" id="button-addon2"
