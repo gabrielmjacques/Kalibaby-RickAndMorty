@@ -6,7 +6,7 @@ import { GetServerSideProps } from 'next'
 import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
 
-import styles from "../../styles/ListPage.module.css"
+import styles from "@/styles/ListPage.module.css"
 
 interface Character
 {
@@ -41,14 +41,14 @@ interface CharsProps
     results: Character[]
 }
 
-export default function ListPageId(data: CharsProps)
+export default function Search(data: CharsProps)
 {
     const [search, setSearch] = useState<string>();
     const [disPrevBtn, setDisPrevBtn] = useState<boolean>(false);
     const [disNextBtn, setDisNextBtn] = useState<boolean>(false);
 
     const router = useRouter()
-    const pageId = Number(router.query.listpageid)
+    const pageId = Number(router.query.page)
 
     useEffect(() =>
     {
@@ -126,9 +126,10 @@ export default function ListPageId(data: CharsProps)
 export const getServerSideProps: GetServerSideProps<CharsProps> = async (context) =>
 {
     const { params } = context
-    const page_id = params?.listpageid
+    const search = params?.search
+    const page = params?.page
 
-    const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page_id}`)
+    const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${String(page).replaceAll("%20", "+")}&name=${search}`)
     const data = await res.json()
 
     return {
