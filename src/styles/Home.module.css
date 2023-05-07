@@ -11,6 +11,16 @@
     filter: brightness(0.4);
 }
 
+.mainCard {
+    position: relative;
+    background-color: #0000007a;
+
+    padding: 80px 20px;
+
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(5px);
+}
+
 .logo {
     margin: auto;
 
