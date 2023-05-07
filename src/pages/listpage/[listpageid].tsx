@@ -6,7 +6,7 @@ import { GetServerSideProps } from 'next'
 import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
 
-import styles from "../../styles/ListPage.module.css"
+import styles from "@/styles/ListPage.module.css"
 
 interface Character
 {

@@ -13,7 +13,7 @@
 .EpList {
     overflow-y: scroll;
 
-    height: 350px;
+    max-height: 350px;
 }
 
 .EpList::-webkit-scrollbar {
