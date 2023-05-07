@@ -84,7 +84,7 @@ export default function Search(data: CharsProps)
     }
 
     return (
-        <div className={ `col ${styles.listPage}` } style={ { minHeight: "100vh" } }>
+        <div className={ `col anim-background` } style={ { minHeight: "100vh" } }>
             <Head>
                 <title>Rick and Morty - Pesquisa: { search_param }</title>
             </Head>

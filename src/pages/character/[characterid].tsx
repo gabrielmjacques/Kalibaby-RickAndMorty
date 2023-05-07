@@ -45,7 +45,7 @@ type Props = {
 export default function CharacterId({ character, episodes }: Props)
 {
     return (
-        <div className="col bg-dark" style={ { minHeight: "100vh" } }>
+        <div className="col bg-dark anim-background" style={ { minHeight: "100vh" } }>
             <Head>
                 <title>Rick and Morty - { character.name }</title>
             </Head>

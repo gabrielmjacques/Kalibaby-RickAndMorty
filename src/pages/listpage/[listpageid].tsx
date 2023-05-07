@@ -83,7 +83,7 @@ export default function ListPageId(data: CharsProps)
     }
 
     return (
-        <div className={ `col ${styles.listPage}` } style={ { minHeight: "100vh" } }>
+        <div className={ `col anim-background` } style={ { minHeight: "100vh" } }>
             <Head>
                 <title>Rick and Morty - Personagens</title>
             </Head>
