@@ -12,18 +12,19 @@ export default function Home()
 
       <div className={ styles.bg }></div>
 
-      <div className="col-md-5 col-sm-10 mx-auto pt-5">
+      <div className="col-md-5 col-sm-10 mx-auto" style={ { paddingTop: "100px" } }>
 
         <div className={ `row rounded-5 ${styles.mainCard}` }>
-          <div className="row mx-auto">
-            <div className="row">
+          <div className="row">
+
+            <div className="row mx-auto">
               <img className={ `p-5 ${styles.logo}` } src={ "/logo.png" } alt="Rick and Morty logo" width={ "50%" } />
             </div>
-            <div className="row mt-5">
+            <div className="row mx-auto mt-5">
               <Link className='btn btn-dark' href="/listpage/1">Ver Personagens</Link>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </main>
