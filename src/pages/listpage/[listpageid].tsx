@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 
-import Header from '@/components/Navbar'
+import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
 
 import styles from "../../styles/ListPage.module.css"
-import Navbar from '@/components/Navbar'
 
 interface Character
 {
@@ -76,10 +75,12 @@ export default function ListPageId(data: CharsProps)
     }
 
     return (
-        <div className='col bg-dark' style={ { minHeight: "100vh" } }>
+        <div className={ `col ${styles.listPage}` } style={ { minHeight: "100vh" } }>
             <Navbar />
 
             <div className="row pt-5 justify-content-center">
+
+
                 { RenderChars() }
 
                 <div className={ `row pb-5 ${styles.pageControl}` }>

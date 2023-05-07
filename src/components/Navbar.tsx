@@ -1,11 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
+import styles from "../styles/Navbar.module.css"
+
 export default function Navbar()
 {
     return (
         <div>
-            <nav className="navbar p-0" style={ { backgroundColor: "#222831" } }>
+            <nav className={ `navbar p-0 ${styles.navbar}` } style={ { backgroundColor: "#222831" } }>
                 <div className="container d-flex justify-content-center">
                     <Link href={ "/listpage/1" } className="navbar-brand p-0">
                         <img src="/logo.png" alt="Rick and Morty logo" width={ '150px' } />

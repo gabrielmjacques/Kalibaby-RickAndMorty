@@ -1,0 +1,10 @@
+.navbar img {
+    filter: drop-shadow(0 0 7px #8ec44897);
+    animation: logo 3s infinite alternate;
+}
+
+@keyframes logo {
+    to {
+        filter: drop-shadow(0 0 10px #8ec44897);
+    }
+}
