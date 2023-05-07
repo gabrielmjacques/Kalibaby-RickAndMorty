@@ -1,11 +1,15 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import Image from 'next/image'
+import Head from 'next/head'
 
 export default function Home()
 {
   return (
     <main>
+      <Head>
+        <title>Rick and Morty - Início</title>
+      </Head>
+
       <div className={ styles.bg } />
 
       <div className="col-md-5 col-sm-10 mx-auto pt-5">

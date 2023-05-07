@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import EpisodeCard from "@/components/EpisodeCard"
 
 import styles from "../../styles/Character.module.css"
+import Head from "next/head"
 
 type CharInfo = {
     id: 2,
@@ -45,6 +46,9 @@ export default function CharacterId({ character, episodes }: Props)
 {
     return (
         <div className="col bg-dark" style={ { minHeight: "100vh" } }>
+            <Head>
+                <title>Rick and Morty - { character.name }</title>
+            </Head>
             <Navbar />
 
             <div className="row pt-5 pb-5 justify-content-center">

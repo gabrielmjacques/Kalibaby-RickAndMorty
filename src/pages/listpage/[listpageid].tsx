@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
 
 import styles from "@/styles/ListPage.module.css"
+import Head from 'next/head'
 
 interface Character
 {
@@ -83,6 +84,9 @@ export default function ListPageId(data: CharsProps)
 
     return (
         <div className={ `col ${styles.listPage}` } style={ { minHeight: "100vh" } }>
+            <Head>
+                <title>Rick and Morty - Personagens</title>
+            </Head>
             <Navbar />
 
             <div className="row pt-5 justify-content-center">

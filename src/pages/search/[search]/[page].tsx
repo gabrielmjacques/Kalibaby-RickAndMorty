@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
 
 import styles from "@/styles/ListPage.module.css"
+import Head from 'next/head'
 
 interface Character
 {
@@ -48,6 +49,7 @@ export default function Search(data: CharsProps)
     const [disNextBtn, setDisNextBtn] = useState<boolean>(false);
 
     const router = useRouter()
+    const search_param = router.query.search
     const pageId = Number(router.query.page)
 
     useEffect(() =>
@@ -83,6 +85,9 @@ export default function Search(data: CharsProps)
 
     return (
         <div className={ `col ${styles.listPage}` } style={ { minHeight: "100vh" } }>
+            <Head>
+                <title>Rick and Morty - Pesquisa: { search_param }</title>
+            </Head>
             <Navbar />
 
             <div className="row pt-5 justify-content-center">
