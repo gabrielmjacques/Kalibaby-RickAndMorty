@@ -16,7 +16,7 @@ body {
 
 .anim-background {
   background-color: #222222;
-  background-image: radial-gradient(#9cd75318, #222222, #45bdcd18);
+  background-image: radial-gradient(#9cd75330, #222222, #45bdcd30);
   background-size: 300% 300%;
 
   animation: bg 20s infinite;

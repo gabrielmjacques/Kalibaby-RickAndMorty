@@ -1,3 +1,10 @@
+.navbar {
+    background-color: #00000065;
+
+    box-shadow: 0 10px 10px #00000065;
+    backdrop-filter: blur(3px);
+}
+
 .navbar img {
     filter: drop-shadow(0 0 7px #8ec44897);
     animation: logo 3s infinite alternate;
