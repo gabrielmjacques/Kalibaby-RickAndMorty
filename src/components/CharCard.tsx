@@ -18,7 +18,7 @@ export default function CharCard(props: Char)
     return (
         <div
             className={ styles.charCard }
-            onClick={ () => window.location.replace(`../character/${props.id}`) }>
+            onClick={ () => window.location.replace(`/character/${props.id}`) }>
 
             <div className={ styles.imgContainer }>
                 <Image src={ props.image } alt={ `${props.name} image` } width={ 150 } height={ 150 } />
