@@ -11,6 +11,10 @@
     filter: brightness(0.4);
 }
 
+.mainCardContainer {
+    padding-top: 100px;
+}
+
 .mainCard {
     position: relative;
     background-color: #0000007a;
@@ -25,4 +29,14 @@
     margin: auto;
 
     max-width: 500px;
+}
+
+@media (max-width: 732px) {
+    .mainCardContainer {
+        padding-top: 0;
+    }
+
+    .mainCard {
+        height: 100vh;
+    }
 }
