@@ -1,4 +1,3 @@
-import React from "react"
 import { GetServerSideProps } from "next"
 import Navbar from "@/components/Navbar"
 import EpisodeCard from "@/components/EpisodeCard"

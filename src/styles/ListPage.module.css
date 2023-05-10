@@ -1,8 +1,3 @@
-.searchInput:focus,
-.searchInput:active {
-    box-shadow: -3px 3px #198754;
-}
-
 .pageControl div {
     position: relative;
     display: flex;

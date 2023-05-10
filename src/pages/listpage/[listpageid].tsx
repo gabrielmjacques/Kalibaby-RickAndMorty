@@ -1,10 +1,10 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 
 import Navbar from '@/components/Navbar'
 import CharCard from '@/components/CharCard'
+import SearchInput from '@/components/SearchInput'
 
 import styles from "@/styles/ListPage.module.css"
 import Head from 'next/head'
@@ -44,7 +44,6 @@ interface CharsProps
 
 export default function ListPageId(data: CharsProps)
 {
-    const [search, setSearch] = useState<string>();
     const [disPrevBtn, setDisPrevBtn] = useState<boolean>(false);
     const [disNextBtn, setDisNextBtn] = useState<boolean>(false);
 
@@ -76,12 +75,6 @@ export default function ListPageId(data: CharsProps)
         )
     }
 
-    const Search = () =>
-    {
-        setSearch(search?.replaceAll(" ", "+"))
-        window.location.replace(`/search/${search}/1`)
-    }
-
     return (
         <div className={ `col anim-background` } style={ { minHeight: "100vh" } }>
             <Head>
@@ -90,38 +83,19 @@ export default function ListPageId(data: CharsProps)
             <Navbar />
 
             <div className="row pt-5 justify-content-center">
-                <div className="row">
-                    <div className="col-md-6 col-sm-11 mx-auto">
-                        <div className="input-group mb-3">
-                            <input
-                                type="text"
-                                className={ `form-control bg-dark text-white me-1 border-0 ${styles.searchInput}` }
-                                placeholder="Pesquisar Personagem"
-                                aria-label="Recipient's username" aria-describedby="button-addon2"
-                                onChange={ (e) => setSearch(e.target.value) }
-                                onKeyDown={ (e) =>
-                                {
-                                    if (e.key == "Enter") { Search() }
-                                } } />
-                            <button
-                                className="btn btn-outline-success"
-                                type="button" id="button-addon2"
-                                onClick={ () => { Search() } }>Button</button>
-                        </div>
-                    </div>
-                </div>
+                <SearchInput />
 
                 { RenderChars() }
 
                 <div className={ `row pb-5 ${styles.pageControl}` }>
-                    <div className="col-6">
+                    <div className="col-10">
                         <button
-                            className='btn btn-success'
+                            className='btn btn-success w-100'
                             disabled={ disPrevBtn }
                             onClick={ () => window.location.replace(String(pageId - 1)) }>Anterior</button>
 
                         <button
-                            className='btn btn-success'
+                            className='btn btn-success w-100'
                             disabled={ disNextBtn }
                             onClick={ () => window.location.replace(String(pageId + 1)) }>Próximo</button>
                     </div>
