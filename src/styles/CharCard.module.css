@@ -23,6 +23,7 @@
 
     width: 40%;
     height: 100%;
+    box-shadow: inset -10px 0 10px black;
 }
 
 .imgContainer img {

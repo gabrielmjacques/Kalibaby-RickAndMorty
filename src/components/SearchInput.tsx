@@ -29,7 +29,7 @@ export default function SearchInput()
                     <button
                         className="btn btn-outline-success"
                         type="button" id="button-addon2"
-                        onClick={ () => { Search() } }>Button</button>
+                        onClick={ () => { Search() } }>Pesquisar</button>
                 </div>
             </div>
         </div>
