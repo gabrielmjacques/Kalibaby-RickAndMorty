@@ -1,5 +1,3 @@
-![image](https://github.com/gabrielmjacques/Kalibaby-RickAndMorty/assets/107326349/0881f116-85d6-4a60-959d-df629b780d23)
-
 ## Acesse as informações de mais de 800 personagens do seriado Rick and Morty com facilidade.
 # Tecnologias usadas:
 * Next.js Framework
